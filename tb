@@ -4,8 +4,8 @@ blocked_id="$1"
 arguments="${@:2}"
 
 output=`task add $arguments`
-echo $output
+#echo $output
 newid=`echo $output | grep -e "[0-9]*" -o`
-echo $newid
+#echo $newid
 
-echo task $blocked_id modify depends:$newid
+task $blocked_id modify depends:$newid
